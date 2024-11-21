@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena WEB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+            overflow: hidden; /* Prevent scrolling in iframe */
+        }
+        h1 {
+            color: #ff4081;
+            font-size: 24px;
+
+        }
+        h3 {
+            color: #FF0000;
+            font-size: 24px;
+        }
+        button {
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e73370;
+        }
+        img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+        iframe {
+            margin: 20px auto;
+            border-radius: 12px;
+        }
+        #emotion {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Athena WEB</h1>
+
+    <!-- Emotion Display -->
+    <img id="emotion" src="images/neutral.png" alt="Emotion">
+
+    <!-- Commands -->
+    <h2>Commands</h2>
+    <button onclick="executeCommand('weather')">What's the Weather?</button>
+    <button onclick="executeCommand('train')">Train Arrivals</button>
+    <button onclick="executeCommand('greet')">Greet Me</button>
+    <button onclick="executeCommand('motivate')">Motivate Me</button>
+    <button onclick="executeCommand('joke')">Tell Me a Joke</button>
+    <button onclick="executeCommand('music')">Play Music</button>
+    <button onclick="executeCommand('fact')">Tell Me a Fact</button>
+    <button onclick="executeCommand('quote')">Inspire Me</button>
+    <button onclick="executeCommand('time')">What's the Time?</button>
+    <button onclick="executeCommand('date')">What's the Date?</button>
+    <button onclick="executeCommand('autoplay')">Autoplay Music</button>
+
+    <!-- Spotify Embed -->
+    <h2>Music Playlist</h2>
+    <h3>due to how spotify embeds work you need spotify premium for this to work.</h3>
+    <iframe 
+        id="spotify-embed"
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/playlist/5AF3C6tugosaFvZVDhE9gz?utm_source=generator&theme=0" 
+        width="100%" 
+        height="352" 
+        frameborder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+
+    <!-- Train Timetable Embed -->
+    <h2>Train Arrivals</h2>
+    <iframe 
+        src="https://www.leddepartureboard.com/singleboard/arrivals/CBK" 
+        width="100%" 
+        height="400" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>
